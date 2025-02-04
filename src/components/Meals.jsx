@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MealItem from "./MealItem.jsx";
 
 // Recordatorio. No puedo hacer async una funcion componente. React no me lo permite.
 export default function Meals() {
@@ -27,7 +28,7 @@ export default function Meals() {
   return (
     <ul id="meals">
       {loadedMealsState.map((meal) => (
-        <li key={meal.id}>{meal.name}</li>
+        <MealItem key={meal.id} meal={meal} />
       ))}
     </ul>
   );
